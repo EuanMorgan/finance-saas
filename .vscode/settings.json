@@ -1,0 +1,30 @@
+{
+	"editor.codeActionsOnSave": {
+		"source.organizeImports.biome": "explicit",
+		"quickfix.biome": "explicit"
+	},
+	"editor.defaultFormatter": "biomejs.biome",
+	"editor.formatOnSave": true,
+	"tailwindCSS.experimental.classRegex": [
+		["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+		["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+	],
+
+	"typescript.enablePromptUseWorkspaceTsdk": true,
+	// Never auto import next/router
+	"typescript.preferences.autoImportFileExcludePatterns": [
+		"next/router.d.ts",
+		"next/dist/client/router.d.ts",
+		// Prefer imports from our UI lib
+		"react-hook-form/dist/index.d.ts",
+		"react-day-picker/dist/index.d.ts"
+	],
+	"typescript.tsdk": "node_modules/typescript/lib",
+	// Prefer our own import module specifier ~/example instead of relative paths like ../../.../example
+	"javascript.preferences.importModuleSpecifier": "non-relative",
+	"typescript.preferences.importModuleSpecifier": "non-relative",
+	"workbench.editor.customLabels.patterns": {
+		"**/app/**/page.tsx": "${dirname(1)}/${dirname}",
+		"**/app/**/layout.tsx": "${dirname}/layout.${extname}"
+	}
+}
