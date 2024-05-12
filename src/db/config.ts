@@ -1,13 +1,13 @@
 import "dotenv/config";
 import type { Config } from "drizzle-kit";
+import { env } from "~/env";
 
-console.log(process.env);
 export default {
 	schema: "./src/db/schema.ts",
 	out: "./src/db/out",
 	dialect: "postgresql",
 	dbCredentials: {
-		url: process.env.DATABASE_URL as string,
+		url: env.DATABASE_URL as string,
 	},
 	tablesFilter: ["finance_*"],
 	verbose: true,
